@@ -151,33 +151,36 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                          )
                        ),
                        argonTabItem(
-                         tabName = "hadir"
-                       ),
-                       argonTabItem(
-                         tabName = "aktif",
+                         tabName = "hadir",
                          argonRow(
-                           h1("Pengaruh Keaktifan Terhadap Nilai AKhir"),
-                           p("Keaktifan insan asrama memiliki kontribusi terhadap nilai akhir dan dihitung selama
-                           periode masa asrama. Adapun persentasenya sebesar 10%.")
+                           h1("Kehadiran")
                          ),
                          argonRow(
                            argonColumn(
-                             width = 16,
-                             argonH1("Filter by:", display = 4),
+                             width = 12,
+                             argonH1(display = 4),
                              argonTabSet(
                                id = "filter",
-                               card_wrapper = TRUE,
+                               card_wrapper = FALSE,
                                horizontal = TRUE,
                                circle = FALSE,
                                size = "sm",
                                width = 12,
                                iconList = lapply(X = 1:4, FUN = argonIcon, name = "bold-right"),
                                argonTab(
-                                 tabName = "Gedung",
+                                 tabName = "Be New Family (BNF)",
                                  active = FALSE
                                ),
                                argonTab(
-                                 tabName = "Lorong",
+                                 tabName = "Social Gathering Lorong",
+                                 active = FALSE
+                               ),
+                               argonTab(
+                                 tabName = "Social Gathering Gedung",
+                                 active = TRUE
+                               ),
+                               argonTab(
+                                 tabName = "Hari Bersih Asrama",
                                  active = FALSE
                                )
                              )
@@ -185,13 +188,19 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                          )
                        ),
                        argonTabItem(
+                         tabName = "aktif",
+                         argonRow(
+                           h1("Keaktifan")
+                         ),
+                         argonRow(
+                           h1("Pengaruh Poin Keaktifan Terhadap Nilai Akhir"),
+                           p("Keaktifan insan asrama dalam kegiatan mempunyai kontribusi sebesar ... terhadap nilai akhir")
+                         )
+                       ),
+                                              argonTabItem(
                          tabName = "langgar",
                          argonRow(
-                           h1("Pelanggaran"),
-                           p("Pelanggaran terbagi menjadi tiga kategori, yaitu pelanggaran ringan, sedang, dan berat. 
-                           Pelanggaran ringan menyebabkan pengurangan nilai akhir sebesar 1%. 
-                           Pelanggaran sedang menyebabkan pengurangan nilai akhir sebesar 5%.
-                           Pelanggaran berat menyebabkan pengurangan nilai akhir sebesar 10%.")
+                           h1("Pelanggaran")
                          ),
                          argonRow(
                            argonColumn(
@@ -220,10 +229,7 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                        argonTabItem(
                          tabName = "rekap",
                          argonRow(
-                           h1("Rekapitulasi"),
-                           p("Persentase kehadiran terhadap nilai akhir adalah sebesar 90%.
-                             Persentase keaktifan terhadap nilai akhir adalah sebesar 10%.
-                             Sedangkan, pelanggaran mengakibatkan pengurangan nilai akhir sebesar persentase kumulatif pelanggaran yang dilakukan insan asrama.")
+                           h1("Rekapitulasi")
                          ),
                          argonRow(
                            argonColumn(
